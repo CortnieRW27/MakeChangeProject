@@ -9,4 +9,4 @@ Technologies Used
 Lessons Learned
 
 I learned more about each topic covered in class. I went through and read everything again to get a better understanding. I learned more about the “truncating, floor, ceiling, and rounding” with java because I needed to use it to make my program work. I really started to see how certain things are important, for example, when trying to create an “if” statement I couldn’t have variables that weren’t used in that specific statement while they were initialized in another “if” statement.  
-![image](https://github.com/CortnieRW27/MakeChangeProject/assets/132413095/555b013a-8988-4a8b-872f-e0a65989dd37)
+
