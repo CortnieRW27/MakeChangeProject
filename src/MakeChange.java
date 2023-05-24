@@ -21,107 +21,129 @@ public class MakeChange {
 		double remainder5 = 0;
 		double remainder6 = 0;
 		double remainder7 = 0;
-		double remainder8 = 0;
-		double a, b, c, d, e, f, g, h = 0;
+		double roundedNum = 0;
+		
+//		double remainder8 = 0;	
+//		double trunkNum = 0;
+//		double trunkNum2 = 0;
+//		double trunkNum3 = 0;
+//		double trunkNum4 = 0;
+//		double trunkNum5 = 0;
+//		double trunkNum6 = 0;
 
 		System.out.println("How much is the item you chose?");
 		double itemPrice = sc.nextDouble();
 		System.out.println("How much money was given?");
 		double amountTendered = sc.nextDouble();
+
+		if (amountTendered  < itemPrice) {
+			System.out.println("ERROR! Please provide correct amount!");
+		}
+		
+		else if (amountTendered >= itemPrice) {	
+		changeReturned = (amountTendered - itemPrice);
+		System.out.println(changeReturned);
+		}
 		
 		
-		if (amountTendered < itemPrice) {
-			System.out.println("ERROR: Please give correct amount of  money!");
+		remainder = (double) changeReturned % 20;
+//		System.out.println(remainder);
+		
+		if (changeReturned >= 20) {
+			twenties = (int) changeReturned / 20;
+			System.out.println(twenties + " twenties");
+		}
+		else if (changeReturned < 20) {
+			
 		}
 
-		if (amountTendered >= itemPrice) {
-			changeReturned = (amountTendered - itemPrice);
-			double roundedNum = (changeReturned + 0.0005);
-
-			a = roundedNum;
-			a = a * 100;
-			a = Math.floor(a);
-			a = a / 100;
-			System.out.println("Your change is " + a);
-
-			twenties = (int) a / 20;
-			System.out.println("You will recieve " + twenties + " twenties");
-			remainder = (double) roundedNum % 20;
-			
-
-			b = remainder;
-			b = b * 100;
-			b = Math.floor(b);
-			b = b / 100;
-
-			tens = (int) b / 10;
-			System.out.println("You will recieve " + tens + " tens");
-			remainder2 = (double) roundedNum % 10;
-			
-			
-
-			c = remainder2;
-			c = c * 100;
-			c = Math.floor(c);
-			c = c / 100;
-
-			fives = (int) c / 5;
-			System.out.println("You will recieve " + fives + " fives");
-			remainder3 = (double) roundedNum % 5;
-            
-            
-			d = remainder3;
-			d = d * 100;
-			d = Math.floor(d);
-			d = d / 100;
-
-			ones = (int) d / 1;
-			System.out.println("You will recieve " + ones + " ones");
-			remainder4 = (double) roundedNum % 1;
-			
-
-			e = remainder4;
-			e = e * 100;
-			e = Math.floor(e);
-			e = e / 100;
-
-			quarters = (int) (e * 100) / 25;
-			System.out.println("You will recieve " + quarters + " quarters");
-			remainder5 = (double) roundedNum % .25;
-			
-
-			f = remainder5;
-			f = f * 100;
-			f = Math.floor(f);
-			f = f / 100;
-
-			dimes = (int) (f * 100) / 10;
-			System.out.println("You will recieve " + dimes + " dimes");
-			remainder6 = (double) roundedNum % .10;
-			
-
-			g = remainder5;
-			g = g * 100;
-			g = Math.floor(g);
-			g = g / 100;
-
-			nickels = (int) (g * 100) / 5;
-			System.out.println("You will recieve " + nickels + " nickels");
-			remainder7 = (double) roundedNum % .05;
-			
-
-			h = remainder6;
-			h = h * 100;
-			h = Math.floor(h);
-			h = h / 100;
-
-			pennies = (int) (h * 100) / 1;
-			System.out.println("You will recieve " + pennies + " pennies");
+		
+		remainder2 = (double) remainder % 10;
+//		System.out.println(remainder2);
+		
+		if (remainder >= 10) {
+			tens = (int) remainder / 10;
+			System.out.println(tens + " tens");
 		}
+		else if (remainder < 10) {
 			
+		}
+		
+		
+		remainder3 = (double) remainder2 % 5;
+//		System.out.println(remainder3);
+		
+		if (remainder2 >= 5) {
+			fives = (int) remainder2 / 5;
+			System.out.println(fives + " fives");
+		}
+		else if (remainder2 < 5) {
+			
+		}
 
-		sc.close();
+		
+		remainder4 = (double) remainder3 % 1;
+//		System.out.println(remainder4);
+		
+		if (remainder3 >= 1) {
+			ones = (int) remainder3 / 1;
+			System.out.println(ones + " ones");
+		}
+		else if (remainder3 < 1) {
+			
+		}
+
+
+		
+		remainder5 = (double) remainder4 % .25;
+//		System.out.println(remainder5);
+		 
+		if (remainder4 >= .25) {
+			quarters = (int) (remainder4 * 100) / 25;
+			System.out.println(quarters + " quarters");
+		}
+		else if (remainder4 < .25) {
+			
+		}
+
+		
+		
+		remainder6 = (double) remainder5 % .10;
+//		System.out.println(remainder6);
+		
+		if (remainder5 >= .10) {
+			dimes = (int) (remainder5 * 100) / 10;
+			System.out.println(dimes + " dimes");
+		}
+		else if (remainder5 < .10) {
+			
+		}
 		
 
+		
+		remainder7 = (double) remainder6 % .05;
+//		System.out.println(remainder7);
+		
+		if (remainder6 >= .05) {
+			nickels = (int) (remainder6 * 100) / 5;
+			System.out.println(nickels + " nickels");
+		}
+		else if (remainder6 < .05) {
+			
+		}
+		
+		roundedNum = (remainder7 + 0.0005);
+//		System.out.println(roundedNum);
+		roundedNum = roundedNum;
+		roundedNum = roundedNum * 100;
+//		roundedNum = Math.floor(roundedNum);
+		roundedNum = roundedNum / 100;
+//		System.out.println(roundedNum);
+	
+		pennies = (int) (roundedNum * 100) / 1;
+		System.out.println(pennies + " pennies");
+//		remainder8 = (double) roundedNum % .01;
+		}
 	}
-}
+
+
